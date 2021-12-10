@@ -2,7 +2,7 @@
   # Run Buddy
 
   ## Description
-  a running app
+  dfgadfg
 
   ## Table of contents
   * [Installation](#installation)
