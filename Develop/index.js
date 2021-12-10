@@ -28,7 +28,7 @@ const questions = () => {
         {
             type: 'list',
             name: 'license',
-            message: "Please select all licenses that apply",
+            message: "Please select a licenses",
             choices: ['GNU', 'Mozilla', 'Apache', 'MIT', 'Boost', 'None']
         },
         {
@@ -56,13 +56,7 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 questions().then((answers) => {
-    fs.writeFile("README.md", generateMarkdown(answers), (err) => {
+    fs.writeFile("NEWREADME.md", generateMarkdown(answers), (err) => {
       if (err) throw err;
     });
   });
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
