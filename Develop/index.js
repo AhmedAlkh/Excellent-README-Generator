@@ -2,7 +2,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
 
-// TODO: Create an array of questions for user input
+// questions for user to answer, questions with validate are required!
 const questions = () => {
     return inquirer.prompt([
         {
@@ -45,7 +45,7 @@ const questions = () => {
             type: 'list',
             name: 'license',
             message: "Please select a licenses",
-            choices: ['GNU', 'Mozilla', 'Apache', 'MIT', 'Boost', 'None']
+            choices: ['GPLv3', 'MPL_2.0', 'Apache_2.0', 'MIT', 'Boost_1.0', 'None']
         },
         {
             type: 'input',
@@ -86,9 +86,10 @@ const questions = () => {
     ]);
 };
 
-// TODO: Create a function to write README file
+// Write file
 questions().then((answers) => {
     fs.writeFile("NEWREADME.md", generateMarkdown(answers), (err) => {
       if (err) throw err;
     });
   });
+
